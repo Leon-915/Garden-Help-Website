@@ -1,0 +1,130 @@
+.jobsdisplay-component {
+    color: #444444;
+    font-size: 14px;
+    padding: 2.5%;
+}
+.jobsdisplay-component h1 {
+    color: #181818;
+    font-size: 28px;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+.rightJob h2 {
+    font-size: 22px;
+    line-height: normal;
+    margin-bottom: 15px;
+    line-height: normal;
+}
+.rightJob h3, .rightJob p {
+    font-size: 14px;
+    line-height: normal;
+}
+.rightJob h3 {
+    color: #444444;
+    font-weight: bold;
+}
+.jobsdisplay-component > div.jobsWrapper {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.jobsWrapper {
+    position: relative;
+    margin-bottom: 1px;
+    width: 100%;
+    color: #fff;
+    overflow: hidden;
+}
+.accordian {
+    color: #fff;
+    position: relative;
+    display: block;
+    padding: 0 0 0 1em;
+    background: #78b644;
+    font-weight: bold;
+    line-height: 3;
+    cursor: pointer;
+}
+.jobsWrapper .eachJobs {
+    max-height: 0;
+    overflow: hidden;
+    background: #8cd451;
+    -webkit-transition: max-height .35s;
+    -o-transition: max-height .35s;
+    transition: max-height .35s;
+    display: flex;
+}
+.jobsWrapper input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.jobsWrapper input:checked ~ .eachJobs {
+    max-height: 40em;
+    padding: 1em;
+}
+.accordian::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 3em;
+    height: 3em;
+    line-height: 3;
+    text-align: center;
+    -webkit-transition: all .35s;
+    -o-transition: all .35s;
+    transition: all .35s;
+}
+.jobsWrapper input[type=radio] + .accordian::after {
+  content: "\25BC";
+}
+.jobsWrapper input[type=radio]:checked + .accordian::after {
+  transform: rotateX(180deg);
+}
+.nav_section ul li ~ li {
+    position: absolute;
+    top: 62px;
+    width: 100%;
+    background: #78b644;
+    display: none;
+    left: 0;
+}
+.nav_section ul li:nth-child(3) {
+    top: 118px;
+}
+.nav_section ul li ~ li a {
+    padding: 20px;
+    display: inline-block;
+}
+.nav_section ul li:first-child {
+    cursor: context-menu;
+}
+.nav_section ul {
+    position: relative;
+    background: #78b644;
+}
+.nav_section div:hover ul {
+    position: static;
+}
+.nav_section div:hover ul li ~ li {
+    display: block;
+    text-align: center;
+}
+.nav_section div {
+    position: relative;
+}
+.leftJob {
+    max-width: 35%;
+    margin-right: 10%;
+}
+.rightJob {
+    width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+    .nav_section ul li ~ li {display: block; position: static;}
+    .nav_section ul li ~ li a {padding: 14px 0; display: block;}
+    .nav_section div {padding: 0;}
+    .nav_section ul li:first-child {padding: 14px 0; border-top: 1px solid #a1cc7c; border-bottom: 1px solid #a1cc7c;}
+    .nav_section ul li.log_out {border-top: 1px solid #a1cc7c; border-bottom: 1px solid #a1cc7c;}
+}
